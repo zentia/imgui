@@ -799,8 +799,8 @@ struct IMGUI_API ImDrawListSharedData
     float           ArcFastRadiusCutoff;                        // Cutoff radius after which arc drawing will fallback to slower PathArcTo()
     ImU8            CircleSegmentCounts[64];    // Precomputed segment count for given radius before we calculate it dynamically (to avoid calculation overhead)
 
-    int             ShadowRectId;               // ID of rect for shadow texture
-    const ImVec4*   ShadowRectUvs;              // UV coordinates for shadow texture (9 entries)
+    int*            ShadowRectIds;              // IDs of rects for shadow texture (2 entries)
+    const ImVec4*   ShadowRectUvs;              // UV coordinates for shadow texture (10 entries)
 
     ImDrawListSharedData();
     void SetCircleTessellationMaxError(float max_error);
